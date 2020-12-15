@@ -31,8 +31,8 @@ class Comment extends Component {
   handleClick = () => {
     console.log("Hello from Button");
   };
-  addComment = () => {
-    console.log("Hello from add comment.");
+  addComment = (comment) => {
+    console.log("Comment", comment);
   };
 
   render() {

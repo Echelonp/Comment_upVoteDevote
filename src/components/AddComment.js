@@ -19,6 +19,14 @@ class AddComment extends Component {
       [e.target.id]: e.target.value,
     });
   };
+  handleChangeRating = (e) => {
+    // console.log(e.target.value);
+    // console.log(this.state);
+    e.target.value = e.target.value % 6;
+    this.setState({
+      [e.target.id]: e.target.value % 6,
+    });
+  };
 
   render() {
     return (
@@ -44,9 +52,9 @@ class AddComment extends Component {
 
               <label htmlFor="content">Rating</label>
               <input
-                type="text"
+                type="number"
                 id="rating"
-                onChange={this.handleChange}
+                onChange={this.handleChangeRating}
                 className="input"
               ></input>
 

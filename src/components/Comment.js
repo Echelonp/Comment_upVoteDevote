@@ -28,11 +28,26 @@ class Comment extends Component {
       },
     ],
   };
-  handleClick = () => {
-    console.log("Hello from Button");
-  };
+
   addComment = (comment) => {
     console.log("Comment", comment);
+    let newComment = {
+      name: comment.name,
+      topic: comment.topic,
+      content: comment.content,
+      rating: comment.rating,
+      time: new Date(),
+    };
+    let newComments = [newComment, ...this.state.comments].sort((a, b) => {
+      if (a.rating < b.rating) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+    this.setState({
+      comments: newComments,
+    });
   };
 
   render() {

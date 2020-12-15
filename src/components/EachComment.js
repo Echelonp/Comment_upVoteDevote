@@ -2,8 +2,6 @@ import React from "react";
 import moment from "moment";
 
 const EachComment = (props) => {
-  console.log(props.comments);
-  console.log("Date: ", new Date());
   const commentList = props.comments.map((comment, i) => {
     return (
       <div className="card blue-grey darken-1" key={i}>
